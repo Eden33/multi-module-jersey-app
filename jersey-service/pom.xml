@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.eden33</groupId>
+    <artifactId>jersey-service</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <name>jersey-service</name>
+    
+    <parent>
+        <groupId>com.eden33</groupId>
+        <artifactId>jersey-parent</artifactId>
+    	<version>1.0.0-SNAPSHOT</version>
+    	<relativePath>../jersey-parent/pom.xml</relativePath>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        
+        <!-- client/server communiction -->
+        <dependency>
+            <groupId>com.eden33</groupId>
+            <artifactId>jersey-dto</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+                
+        <!-- REST Service -->
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet</artifactId>
+            <version>2.17</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.6</version>
+                    <configuration>
+                            <warSourceDirectory>WebContent</warSourceDirectory>
+                            <failOnMissingWebXml>false</failOnMissingWebXml>
+                            <warName>jersey-service</warName>      
+                    </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
